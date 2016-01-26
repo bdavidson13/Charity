@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.faux.Models.*;
 import com.faux.Service.*;
@@ -27,6 +28,12 @@ public class AccountsController {
 			return "redirect:/";
 
 		}
+	 @RequestMapping(value= "/ViewUser", method = RequestMethod.GET)
+	  public String ViewUser(@RequestParam("uuid") String uuid, Model model) {
+	  model.addAttribute("userForm", new UserModel());
+	        return "Accounts/ViewUser";
+	   }
+	
 	private boolean createUser(UserModel model){
 		UserService service = new UserService();
 		User user = new User(
