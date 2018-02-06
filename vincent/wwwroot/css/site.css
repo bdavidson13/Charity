@@ -10,26 +10,21 @@
     padding-right: 15px;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+.header{
+    grid-area: header;
 }
-
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
+.page-content{
+    grid-area: main;
 }
-
-/* QR code generator */
-#qrCode {
-    margin: 15px;
+.nav-menu{
+    grid-area: menu;
 }
-
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
-    }
+.footer{
+    grid-area: footer;
+}
+.page-wrapper{
+    display:grid;
+    grid-template-areas:  'header header header header header header'
+                          'menu main main main main main'
+                          'menu footer footer footer footer footer';
 }
