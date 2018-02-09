@@ -8,10 +8,17 @@ using vincent.Models;
 
 public class UserController :Controller
 {
-    [Route("/createuser")] 
+    [Route("/user/createuser")] 
     public IActionResult CreateUser (){
         UserViewModel model = new UserViewModel();
         model.Password = "12345";
         return View(model);
+    }
+
+    [HttpPost]
+    [Route("/user/createuser")] 
+    public IActionResult CreateUser(UserViewModel model){
+        var temp = model;
+        return View(temp);
     }
 }

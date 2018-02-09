@@ -1,22 +1,30 @@
 @model vincent.Models.UserViewModel
-<div class="page-wrapper users">
-    <div class="form-column">
-            <div>
-                <input class="form-control" asp-for="FirstName" placeholder = "First Name" />
-            </div> 
-            <div>
-                <input class="form-control" asp-for="Email" placeholder="E-mail" />
+
+<form asp-controller="User" asp-action="CreateUser" method="POST" >
+    <div class="form-wrapper">
+        <div class="form-row">
+            <div class="form-column">
+                    <div>
+                        <input class="form-control" asp-for="FirstName" placeholder = "First Name" />
+                    </div> 
+                    <div>
+                        <input class="form-control" asp-for="Email" placeholder="E-mail" />
+                    </div>
+                    <div>
+                        <input class="form-control" asp-for="PhoneNumber" placeholder="Phone Number" />
+                    </div>
             </div>
-            <div>
-                <input class="form-control" asp-for="PhoneNumber" placeholder="Phone Number" />
+            <div class="form-column">
+                    <div>
+                        <input class="form-control" asp-for="LastName" placeholder="Last Name" />
+                    </div>
+                    <div>
+                        <input class="form-control" asp-for="Password" placeholder="password" />
+                    </div>
             </div>
+        </div>
+        <div class="form-row">
+            <input type="submit" value="Create" />
+        </div>
     </div>
-    <div class="form-column">
-            <div>
-                <input class="form-control" asp-for="LastName" placeholder="Last Name" />
-            </div>
-            <div>
-                <input class="form-control" asp-for="Password" placeholder="password" />
-            </div>
-    </div>
-</div>
+</form>

@@ -35,10 +35,6 @@
     grid-auto-rows: minmax(auto,auto);
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-.page-wrapper .users{
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 5px;
-}
 .header-grid{
     display:grid;
     grid-template-columns: repeat(5, 1fr);
@@ -47,6 +43,14 @@
 .header-grid > div{
     border:1px solid black;
     justify-self: end;
+}
+.form-wrapper{
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 5px;
+}
+.form-row{
+    display: grid;
 }
 .form-column{
     display:grid;
