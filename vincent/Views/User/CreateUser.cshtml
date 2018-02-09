@@ -1,16 +1,22 @@
 @model vincent.Models.UserViewModel
-<div class="page-wrapper">
-    <div>
-        <ul>
-            <li>@Html.TextBoxFor(m => m.FirstName, new {  @placeholder = "First Name" })</li>
-            <li>@Html.TextBoxFor(m => m.Email, new { @placeholder = "E-mail" })</li>
-            <li>@Html.TextBoxFor(m => m.PhoneNumber, new { @placeholder = "Phone Number" })</li>
-        </ul>
+<div class="page-wrapper users">
+    <div class="form-column">
+            <div>
+                <input class="form-control" asp-for="FirstName" placeholder = "First Name" />
+            </div> 
+            <div>
+                <input class="form-control" asp-for="Email" placeholder="E-mail" />
+            </div>
+            <div>
+                <input class="form-control" asp-for="PhoneNumber" placeholder="Phone Number" />
+            </div>
     </div>
-    <div>
-        <ul>
-            <li>@Html.TextBoxFor(m => m.LastName, new { @placeholder = "Last Name" })</li>
-            <li>@Html.PasswordFor( m=> m.Password, new { @placeholder = "password" })</li>
-        </ul>
+    <div class="form-column">
+            <div>
+                <input class="form-control" asp-for="LastName" placeholder="Last Name" />
+            </div>
+            <div>
+                <input class="form-control" asp-for="Password" placeholder="password" />
+            </div>
     </div>
 </div>
