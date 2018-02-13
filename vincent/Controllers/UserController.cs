@@ -11,14 +11,19 @@ public class UserController :Controller
     [Route("/user/createuser")] 
     public IActionResult CreateUser (){
         UserViewModel model = new UserViewModel();
-        model.Password = "12345";
         return View(model);
     }
 
     [HttpPost]
     [Route("/user/createuser")] 
     public IActionResult CreateUser(UserViewModel model){
-        var temp = model;
-        return View(temp);
+        if(!ModelState.IsValid){
+            return View(model);
+        }
+        saveUser(model);
+        return View("../Home/Index");
+    }
+    private void saveUser(UserViewModel user){
+        //TODO implement call to service to save
     }
 }
