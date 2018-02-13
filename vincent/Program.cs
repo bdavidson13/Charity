@@ -12,6 +12,7 @@ namespace vincent
 {
     public class Program
     {
+        public string globalTest {get;set;}
         public static void Main(string[] args)
         {
             BuildWebHost(args).Run();
