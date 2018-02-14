@@ -1,3 +1,14 @@
+@model vincent.Models.UserViewModel
 <div class="login-wrapper">
-    
+    <form asp-controller="Home" asp-action="Login" method="POST" >
+        <div>
+            <input class="form-control" asp-for="Email" placeholder="Username" />
+        </div>
+        <div>
+            <input class="form-control" asp-for="Password" placeholder="Password" />
+        </div>
+        <div class="form-row">
+                <input type="submit" value="Login" />
+        </div>
+    </form>
 </div>

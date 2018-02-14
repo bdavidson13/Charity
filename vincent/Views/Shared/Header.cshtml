@@ -1,8 +1,11 @@
 <div class="header-grid">
     <div>
-        @Html.ActionLink("Home","Index","Home")
+        <a asp-controller="Home" asp-action="Index">Home</a>
     </div>
     <div>
-        @Html.ActionLink("Create User","CreateUser","User") 
+        <a asp-controller="User" asp-action="CreateUser">Create User</a>
+    </div>
+    <div>
+        <a asp-controller="Home" asp-action="Login">Log In</a>
     </div>
 </div>
