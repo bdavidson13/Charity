@@ -17,7 +17,6 @@ namespace vincent.Controllers
 
         public IActionResult Index()
         {
-            string testConfig = configuration.GetValue<string>("ApplicationSettings:Test");
             return View();
         }
 

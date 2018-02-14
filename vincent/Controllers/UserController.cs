@@ -4,10 +4,16 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using vincent.Controllers;
 using vincent.Models;
 
-public class UserController :Controller
+public class UserController : BaseController
 {
+    public UserController(IConfiguration configuration) : base(configuration)
+    {
+    }
+
     [Route("/user/createuser")] 
     public IActionResult CreateUser (){
         UserViewModel model = new UserViewModel();
