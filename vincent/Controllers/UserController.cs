@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -22,14 +23,18 @@ public class UserController : BaseController
 
     [HttpPost]
     [Route("/user/createuser")] 
-    public IActionResult CreateUser(UserViewModel model){
+    public async Task<IActionResult> CreateUser(UserViewModel model){
         if(!ModelState.IsValid){
             return View(model);
         }
-        saveUser(model);
+        await saveUser(model);
         return View("../Home/Index");
     }
-    private void saveUser(UserViewModel user){
-        //TODO implement call to service to save
+    private async Task saveUser(UserViewModel user){
+       using(var client = new HttpClient())
+        {
+            HttpResponseMessage response = await client.PostAsJsonAsync("http://localhost:60409/api/users/", user);
+            response.EnsureSuccessStatusCode();
+        }
     }
 }
